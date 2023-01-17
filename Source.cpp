@@ -32,7 +32,7 @@ void input(DAILY& dl)
 	cout << "nhap ten: "; cin.getline(dl.ten, 30);
 	cout << "nhap sdt: "; cin >> dl.sdt;
 	cout << "nhap ngay: " << endl; input_ngay(dl.ngay_tiep_nhan);
-	cout << "nhap dia chi: "; cin.getline(dl.dia_chi, 50);
+	cout << "nhap dia chi: "; cin.ignore(); cin.getline(dl.dia_chi, 50);
 	cout << "nhap email: "; cin.getline(dl.e_mail, 50);
 }
 void input_ngay(DATE& date)
