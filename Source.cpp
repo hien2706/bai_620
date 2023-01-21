@@ -26,9 +26,16 @@ int main() {
 	output(dl);
 	return 0;
 }
-void input(DAILY& dl)
+bool kt_nam_nhuan(int year)
 {
-	cout << "nhap ma dai ly: "; cin.getline(dl.code, 5);
+	if (year % 400 == 0)
+		return true;
+	if (year % 4 == 0 && year % 100 != 0)
+		return true;
+	return false;
+}
+void input(DAILY& dl) {
+	cout << "nhap ma dai ly(khong qua 4 ky tu): "; cin.getline(dl.code, 5);
 	cout << "nhap ten: "; cin.getline(dl.ten, 30);
 	cout << "nhap sdt: "; cin >> dl.sdt;
 	cout << "nhap ngay: " << endl; input_ngay(dl.ngay_tiep_nhan);
@@ -97,14 +104,7 @@ void output(DAILY dl)
 	cout << "email: " << dl.e_mail << endl;
 
 }
-bool kt_nam_nhuan(int year)
-{
-	if (year % 400 == 0)
-		return true;
-	if (year % 4 == 0 && year % 100 != 0)
-		return true;
-	return false;
-}
+
 
 
 
